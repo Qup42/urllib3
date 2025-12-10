@@ -487,8 +487,8 @@ class HTTPConnectionPool(ConnectionPool, RequestMethods):
                 new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)
             raise new_e
 
-        # conn.request() calls http.client.*.request, not the method in
-        # urllib3.request. It also calls makefile (recv) on the socket.
+        # conn.request() calls  urllib3.request. It also calls makefile (recv)
+        # on the socket.
         try:
             conn.request(
                 method,
